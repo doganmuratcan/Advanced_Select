@@ -6,7 +6,6 @@
 --Inner: If node is neither root nor leaf node.
 
 
-
 SELECT N, 
 CASE WHEN P IS NULL THEN 'Root' 
      WHEN(SELECT COUNT(*) FROM BST 
