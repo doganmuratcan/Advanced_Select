@@ -6,9 +6,11 @@
 --Scalene: It's a triangle with  sides of differing lengths.
 --Not A Triangle: The given values of A, B, and C don't form a triangle.
 
-SELECT CASE
-            WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle' 
-            WHEN A = B AND B = C THEN 'Equilateral' 
-            WHEN A = B OR B = C OR A = C THEN 'Isosceles' 
-            ELSE 'Scalene' END 
-FROM TRIANGLES;
+select
+    case
+        when a=b and b=c then 'Equilateral'--Eşkenar Üçgen
+        when a+b <=c or b+c<=a or a+c<b then 'Not A Triangle'--Üçgen değil
+        when a=b or b=c or a=c then 'Isosceles'-- İkizkenar Üçgen
+        else 'Scalene'
+    end
+from TRIANGLES;
